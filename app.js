@@ -2,6 +2,8 @@ const express = require('express')
 
 const exphbs = require('express-handlebars')
 
+const farmList = require('./farmList.json')
+
 const port = 3000
 
 const app = express()
@@ -12,7 +14,7 @@ app.use(express.static('public'))
 
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', { farms: farmList })
 })
 
 
